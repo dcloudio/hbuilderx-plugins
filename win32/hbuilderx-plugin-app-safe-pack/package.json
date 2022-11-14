@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-app-safe-pack",
+    "version": "1.1.25-2022101312",
+    "unzip": [
+        "app-safe-pack.1.1.25.2022101312.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
