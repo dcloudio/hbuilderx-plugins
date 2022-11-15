@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 12
-          registry: 'https://registry.npmjs.org'
+          registry-url: 'https://registry.npmjs.org'
       - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm publish
       - uses: JS-DevTools/npm-publish@v1
         with:
