@@ -1,0 +1,13 @@
+{
+    "name": "mac-hbuilderx-plugin-uniapp-cli-vite",
+    "version": "3.6.9-2022111411-alpha",
+    "unzip": [
+        "uniapp-cli-vite.3.6.9-2022111411.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
