@@ -9,7 +9,6 @@ jobs:
         with:
           node-version: 12
           registry: 'https://registry.npmjs.org'
-      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm ci
       - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm publish
       - uses: JS-DevTools/npm-publish@v1
         with:
