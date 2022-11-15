@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-launcher",
+    "version": "3.6.9-2022111412-alpha",
+    "unzip": [
+        "launcher.3.6.9-2022111412.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
