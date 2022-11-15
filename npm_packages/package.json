@@ -1,8 +1,8 @@
 {
-    "name": "hbuilderx-plugin-unicloud",
-    "version": "2.0.48-2022111117",
+    "name": "hbuilderx-plugin-uniapp-cli",
+    "version": "3.6.9-2022111119-alpha",
     "unzip": [
-        "unicloud.2.0.48-2022111117.zip"
+        "uniapp-cli.3.6.9-2022111119.zip"
     ],
     "description": "hbuilderx",
     "license": "Copyright\u00a9 DCloud Co.,Ltd",
