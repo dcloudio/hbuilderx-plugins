@@ -1,8 +1,8 @@
 {
-    "name": "hbuilderx-plugin-app-safe-pack",
-    "version": "1.1.25-2022101312",
+    "name": "hbuilderx-plugin-unicloud",
+    "version": "2.0.48-2022111117",
     "unzip": [
-        "app-safe-pack.1.1.25.2022101312.zip"
+        "unicloud.2.0.48-2022111117.zip"
     ],
     "description": "hbuilderx",
     "license": "Copyright\u00a9 DCloud Co.,Ltd",
