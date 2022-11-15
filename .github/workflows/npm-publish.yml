@@ -8,8 +8,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 12
-      - run: cd /home/runner/work/hbuilderx-plugins/win32/hbuilderx-plugin-app-safe-pack
-      - run: npm publish
+      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/win32/hbuilderx-plugin-app-safe-pack && npm publish
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
