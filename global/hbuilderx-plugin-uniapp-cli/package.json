@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-uniapp-cli",
+    "version": "3.6.9-2022111119-alpha",
+    "unzip": [
+        "uniapp-cli.3.6.9-2022111119.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
