@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm publish 
+      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/win32/hbuilderx-plugin-uniapp-cli-vite && npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
