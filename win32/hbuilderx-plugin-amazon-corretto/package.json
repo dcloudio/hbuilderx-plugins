@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-amazon-corretto",
+    "version": "0.0.3",
+    "unzip": [
+        "amazon-corretto.0.0.3.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
