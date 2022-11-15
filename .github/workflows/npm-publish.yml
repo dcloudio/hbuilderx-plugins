@@ -1,14 +1,19 @@
-on: push
+name: Publish package on npm
+
+on:
+  release:
+    types: [created]
 
 jobs:
-  publish:
+  publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm ci
       - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/npm_packages && npm publish
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
