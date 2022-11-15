@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-uniapp-debugger",
+    "version": "1.1.0-2022092011",
+    "unzip": [
+        "uniapp-debugger.1.1.0-2022092011.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
