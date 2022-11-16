@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/win32/hbuilderx-plugin-app-safe-pack && npm publish 
+      - run: cd /home/runner/work/hbuilderx-plugins/hbuilderx-plugins/macosx/mac-hbuilderx-plugin-app-safe-pack && npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
