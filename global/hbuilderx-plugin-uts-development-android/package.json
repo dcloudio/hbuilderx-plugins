@@ -1,0 +1,13 @@
+{
+    "name": "hbuilderx-plugin-uts-development-android",
+    "version": "1.0.2-2022111221",
+    "unzip": [
+        "uts-development-android.1.0.2.2022111221.zip"
+    ],
+    "description": "hbuilderx",
+    "license": "Copyright\u00a9 DCloud Co.,Ltd",
+    "author": "hbuilderx",
+    "keywords": [
+        "hbuilderx"
+    ]
+}
