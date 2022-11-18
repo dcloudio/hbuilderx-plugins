@@ -40,6 +40,9 @@ def get_npmjs_package_latest_version(package_name):
     Return:
         version 包最新版本号
     """
+    sync_cmd = "/usr/local/bin/cnpm sync {0}".format(package_name)
+    os.system(sync_cmd)
+
     npmjs_url = "https://registry.npmmirror.com/" + package_name
     try:
         res = requests.get(npmjs_url)
