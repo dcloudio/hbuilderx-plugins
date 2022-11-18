@@ -1,0 +1,13 @@
+win32/hbuilderx-plugin-launcher
+win32/hbuilderx-plugin-php
+win32/hbuilderx-plugin-svn
+win32/hbuilderx-plugin-jre
+win32/hbuilderx-plugin-cef3
+win32/hbuilderx-plugin-qtwebengine
+
+macosx/mac-hbuilderx-plugin-launcher
+macosx/mac-hbuilderx-plugin-php
+macosx/mac-hbuilderx-plugin-qtwebengine
+macosx/mac-hbuilderx-plugin-hxsimplebrowser
+
+global/hbuilderx-plugin-uniapp-runextension
