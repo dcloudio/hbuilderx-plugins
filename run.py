@@ -91,6 +91,16 @@ def handle_a_plugin():
     
     edit_github_workflows_yml_file(platform, plugin_name)
 
+    # 删除无关的文件
+    print("\n:: git rm -rf \n\n")
+    cmd_git_get_delete_file = "cd {0} && git status | grep 'deleted:' | grep '{1}/{2}/' | grep /*.zip".format(current_dir, platform, plugin_name)
+    cmd_result = os.popen(cmd_git_get_delete_file).readline().strip()
+    if len(cmd_result) > 9 and plugin_name in cmd_result and platform in cmd_result:
+        delete_git_file_name = cmd_result.split("deleted:")[1].strip()
+        
+        git_rm_cmd = "cd {0} && git rm -rf {1}".format(current_dir, delete_git_file_name)
+        os.system(git_rm_cmd)
+    return
     print("\n:: git action \n\n")
 
     cmd = "cd {0} && git add .github/workflows/main.yml".format(current_dir)
