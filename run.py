@@ -40,8 +40,10 @@ def get_npmjs_package_latest_version(package_name):
     Return:
         version 包最新版本号
     """
-    sync_cmd = "/usr/local/bin/cnpm sync {0}".format(package_name)
+    print("\n:: cnpm sync start ...... \n")
+    sync_cmd = "cd $HOME && /usr/local/bin/cnpm sync {0} && cd -".format(package_name)
     os.system(sync_cmd)
+    print("\n:: cnpm sync end ...... \n")
 
     npmjs_url = "https://registry.npmmirror.com/" + package_name
     try:
@@ -92,7 +94,7 @@ def handle_a_plugin():
     edit_github_workflows_yml_file(platform, plugin_name)
 
     # 删除无关的文件
-    print("\n:: git rm -rf \n\n")
+    print("\n:: git rm -rf start ...... \n")
     cmd_git_get_delete_file = "cd {0} && git status | grep 'deleted:' | grep '{1}/{2}/' | grep /*.zip".format(current_dir, platform, plugin_name)
     cmd_result = os.popen(cmd_git_get_delete_file).readline().strip()
     if len(cmd_result) > 9 and plugin_name in cmd_result and platform in cmd_result:
@@ -100,8 +102,10 @@ def handle_a_plugin():
         
         git_rm_cmd = "cd {0} && git rm -rf {1}".format(current_dir, delete_git_file_name)
         os.system(git_rm_cmd)
-    return
-    print("\n:: git action \n\n")
+
+    print("\n:: git rm -rf end ...... \n")
+
+    print("\n:: git add & commit & push start ...... \n")
 
     cmd = "cd {0} && git add .github/workflows/main.yml".format(current_dir)
     os.system(cmd)
