@@ -1,8 +1,8 @@
 {
     "name": "hbuilderx-plugin-uniapp-cli-vite",
-    "version": "3.6.9-2022111411-alpha",
+    "version": "3.6.5-2022112113",
     "unzip": [
-        "uniapp-cli-vite.3.6.9-2022111411.zip"
+        "uniapp-cli-vite.3.6.5-2022112113.zip"
     ],
     "description": "hbuilderx",
     "license": "Copyright\u00a9 DCloud Co.,Ltd",
