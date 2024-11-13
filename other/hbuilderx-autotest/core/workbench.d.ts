@@ -1,0 +1,67 @@
+import Git from '../common/git';
+import { Editor, createTextDocument } from './editor';
+import { expectArrayIncludes, expectEquals, expectMatches, expectTrue } from './expect';
+import type { HBuilderX } from './hxdriver';
+import { TreeItem, TreeItemKind } from './treeItem';
+export declare class Workbench {
+    readonly hx: HBuilderX;
+    constructor(hx: HBuilderX);
+    openProject(project: string): Promise<void>;
+    importProject(project: string): Promise<boolean>;
+    installExtensionFromLocal(path: string): Promise<boolean>;
+    getActiveEditor(file?: string): Promise<Editor>;
+    openEditor(file: string, project?: string): Promise<Editor>;
+    getTreeItemHandler(treeItemKind?: TreeItemKind): Promise<TreeItem>;
+    utils: {
+        expectArrayIncludes: typeof expectArrayIncludes;
+        expectEquals: typeof expectEquals;
+        expectMatches: typeof expectMatches;
+        expectTrue: typeof expectTrue;
+        Git: typeof Git;
+    };
+    createTextDocument: typeof createTextDocument;
+    SELECTORS: {
+        Window: string;
+        StatusBarMessage: string;
+        TsServerErrorIgnore: string;
+        TsServerErrorEdit: string;
+        StatusBarItem0Message: string;
+        editor(fileName: string): string;
+        jqlEditor(fileName: string): string;
+        editorTab(fileName: string): string;
+        activeEditorTab: string;
+        activeEditor(fileName: string): string;
+        treeFile(fileName: string): string;
+        outline(outlinePath: string): string;
+        findReferences(referencesPath: string): string;
+        Completions: string;
+        CompletionDetail: string;
+        Hover: string;
+        Signatures: string;
+        MessageService: string;
+    };
+    keyBindings: {
+        insertLineAfter: string;
+        gotoDefinition: string;
+        closeActiveEditor: string;
+        showPubMenu: string;
+        closeAllEditor: string;
+        undo: string;
+        copy: string;
+        cut: string;
+        paste: string;
+        save: string;
+        run: string;
+        delLine: string;
+        selectAll: string;
+        clipBoardHistory: string;
+        newUnTitledEditor: string;
+        'editor.action.triggerSuggest': string;
+        enter: string;
+        down: string;
+        esc: string;
+        openAndCloseOutline: string;
+        findReferences: string;
+        focusProjectManager: string;
+    };
+}
