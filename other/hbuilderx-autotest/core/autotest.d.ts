@@ -47,12 +47,14 @@ export interface AutoTestAutoEditCase extends AutoTestCase<AutoEditExpect> {
     input: string;
 }
 export interface DefinitionExpect {
+    continueAfterjumping: any;
     uri: string;
     line: string | RegExp;
     cursor?: number;
 }
 export interface AutoTestDefinitionCase extends AutoTestCase<DefinitionExpect> {
     kind: 'definition';
+    continueAfterjumping?: boolean;
     range: Range;
 }
 export interface HoverExpect {
@@ -81,6 +83,22 @@ export interface AutoTestOutlineCase extends AutoTestCase<OutlineExpect> {
     lsDir: string;
     programData: string;
     programPlugin: string;
+}
+export interface FoldExpect {
+    filePath: string;
+}
+export interface AutoTestFoldCase extends AutoTestCase<FoldExpect> {
+    kind: 'fold';
+    needCreate?: boolean;
+    project: string;
+    lsDir: string;
+    programData: string;
+    programPlugin: string;
+}
+export interface OpenFileExpect {
+    uri: string;
+}
+export interface AutoTestOpenFileCase extends AutoTestCase<OpenFileExpect> {
 }
 export interface ReferencesExpect {
     filePath: string;

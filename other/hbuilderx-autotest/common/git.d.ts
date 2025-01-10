@@ -1,4 +1,7 @@
 import { SimpleGit } from 'simple-git';
+/**
+ * 基于simple-git封装的git操作
+*/
 export default class Git {
     private options;
     private localDir;

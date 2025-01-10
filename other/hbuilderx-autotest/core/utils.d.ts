@@ -9,12 +9,12 @@ export declare function fileCase(project: string, openfile: string, workbench: a
     caseFail: any[];
     cassAll: any[];
 } | {
+    count: number;
+    caseFail: any[];
+    cassAll: any[];
     error: unknown;
-    count?: undefined;
     openfile?: undefined;
     documentSyncAttr?: undefined;
-    caseFail?: undefined;
-    cassAll?: undefined;
     allTextCases?: undefined;
     runFaliTime?: undefined;
     runSuccessTime?: undefined;
@@ -32,6 +32,18 @@ export declare function fileCase(project: string, openfile: string, workbench: a
     runFailCase: number;
     runSuccessCase: number;
     error?: undefined;
+} | {
+    error: string;
+    count?: undefined;
+    openfile?: undefined;
+    documentSyncAttr?: undefined;
+    caseFail?: undefined;
+    cassAll?: undefined;
+    allTextCases?: undefined;
+    runFaliTime?: undefined;
+    runSuccessTime?: undefined;
+    runFailCase?: undefined;
+    runSuccessCase?: undefined;
 }>;
 export declare function traverseDirectory(dir: string, includes?: string[], needSort?: boolean): string[];
 export declare function moveItemToFront(arr: string[], key: string): string[];

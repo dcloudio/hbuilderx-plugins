@@ -2,8 +2,7 @@
  * @description 测试任务管理
  */
 declare class TestTaskManage {
-    private baseUrl;
-    updateTask(task_id: string, status_text?: string, customFields?: any): void;
+    updateTask(task_id: string, status_text?: string, customFields?: any): Promise<void> | undefined;
     push_dingding_message(msg_type: string, test_project_list: string[] | undefined, task_id: string, hx_version?: string): Promise<void>;
 }
 declare class RunHls extends TestTaskManage {

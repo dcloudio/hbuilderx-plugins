@@ -18,7 +18,7 @@ declare class Outline {
     /**
      * 处理点击跳转
      */
-    doTreeItemJump(test: AutoTestOutlineCase, jsonData: TreeItemInfo, filePath: string, title: string, result: any[]): Promise<void>;
+    doTreeItemJump(test: AutoTestOutlineCase, jsonData: TreeItemInfo, filePath: string, title: string, needCreate: boolean, result: any[]): Promise<void>;
     /**
      * 执行大纲测试用例
      */

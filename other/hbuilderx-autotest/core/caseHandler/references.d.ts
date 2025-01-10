@@ -18,7 +18,7 @@ declare class References {
     /**
      * 处理点击跳转
      */
-    doTreeItemJump(test: AutoTestReferencesCase, jsonData: TreeItemInfo, filePath: string, title: string, result: any[]): Promise<void>;
+    doTreeItemJump(test: AutoTestReferencesCase, jsonData: TreeItemInfo, filePath: string, title: string, needCreate: boolean, result: any[]): Promise<void>;
     /**
      * 执行查找引用测试用例
      * @param test

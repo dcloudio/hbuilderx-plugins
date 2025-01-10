@@ -12,6 +12,9 @@ export interface DefinitionResult {
     range: Range;
     editor: Editor;
 }
+export interface FoldData {
+    [line: string]: number;
+}
 export interface TextDocument extends FullTextDocument {
     lineAt(line: number): TextDocumentLine;
     getText(range?: Range): string;
@@ -38,7 +41,7 @@ export declare class Editor {
     applyCompletion(index: number): Promise<void>;
     functionSignatures(range: Range): Promise<string>;
     hxSleep(ms: number): Promise<unknown>;
-    hover(range: Range): Promise<string>;
+    hover(range: Range, content?: string): Promise<string>;
     grammarRrror(range: Range): Promise<string>;
     gotoDefinition(range: Range): Promise<DefinitionResult>;
     /**
@@ -46,6 +49,7 @@ export declare class Editor {
      */
     outline(): Promise<TreeItemInfo | undefined>;
     closeOutline(): Promise<void>;
+    getFoldData(): Promise<FoldData | undefined>;
     /**
      * 获取查找引用结果
      * @param range

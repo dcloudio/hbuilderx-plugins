@@ -14,10 +14,11 @@ interface TreeItemError {
 }
 /**
  * 树形图跳转相关位置信息
- * @param enable 是否启用
+ * @param enable 是否启用跳转
  * @param filePath 文件路径
  * @param ranges 位置信息
  * @param activeEditor 激活编辑器
+ * @param errorList 错误列表
  */
 interface TreeItemJumpInfo {
     enable: boolean;
@@ -53,6 +54,24 @@ interface ParseTargetPathInfo {
     lsDir: string;
     programData: string;
     programPlugin: string;
+}
+/**
+ * 跳转对比参数
+ * @param parseInfo 解析目标路径信息
+ * @param projectPath 项目路径
+ * @param filePath 文件路径
+ * @param caseTitle 用例标题
+ * @param isEnd 是否是最后一个
+ * @param needCreate 是否需要创建
+ * @param result 结果
+ */
+interface FixedParameters {
+    parseInfo: ParseTargetPathInfo;
+    projectPath: string;
+    filePath: string;
+    caseTitle: string;
+    needCreate: boolean;
+    result: TreeItemError[];
 }
 /**
  * 树形图控件类型
@@ -132,13 +151,8 @@ declare class TreeItem {
     private parseTargetPath;
     /**
      * 点击跳转并对比结果
-     * @param jsonData 树形图数据
-     * @param parseInfo 解析目标路径信息
-     * @param filePath 文件路径
-     * @param title 标题
-     * @param result 结果
      */
-    comparativeTreeItemJump(jsonData: TreeItemInfo, parseInfo: ParseTargetPathInfo, filePath: string, title: string, isEnd: boolean, result: TreeItemError[]): Promise<TreeItemError[]>;
+    comparativeTreeItemJump(jsonData: TreeItemInfo, parameters: FixedParameters, isEnd: boolean): Promise<TreeItemError[]>;
     /**
      * 生成断言数据
      */
@@ -148,4 +162,4 @@ declare class TreeItem {
      */
     addRangToJson(data: TreeItemInfo, onlyValue?: boolean): void;
 }
-export { ParseTargetPathInfo, TreeItem, TreeItemError, TreeItemInfo, TreeItemKind };
+export { ParseTargetPathInfo, TreeItem, TreeItemError, TreeItemInfo, TreeItemKind, FixedParameters };

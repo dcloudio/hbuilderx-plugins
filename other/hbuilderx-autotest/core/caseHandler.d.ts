@@ -1,4 +1,4 @@
-import { AutoTestCheckEditorCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase } from './autotest';
+import { AutoTestCheckEditorCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestFoldCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOpenFileCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase } from './autotest';
 import { Editor } from './editor';
 declare function runDbClickCase(test: AutoTestDbClickCase, editor: Editor): Promise<({
     casename: string;
@@ -11,7 +11,7 @@ declare function runDbClickCase(test: AutoTestDbClickCase, editor: Editor): Prom
 })[]>;
 declare function runCompletionCase(test: AutoTestCompletionCase, editor: Editor, config?: any): Promise<any[]>;
 declare function runKeybindCase(test: AutoTestKeybindCase, editor: Editor): Promise<any[]>;
-declare function runDefinitionCase(test: AutoTestDefinitionCase, editor: Editor): Promise<({
+declare function runDefinitionCase(test: AutoTestDefinitionCase, editor: Editor, config?: any): Promise<({
     casename: string;
     passed: boolean;
     message: string;
@@ -41,5 +41,18 @@ declare function runPerformanceCase(test: AutoTestPerformanceCase, editor: Edito
     timer?: undefined;
 })[]>;
 declare function runOutlineCase(test: AutoTestOutlineCase, editor: Editor): Promise<any[]>;
+declare function runFoldCase(test: AutoTestFoldCase, editor: Editor): Promise<any[]>;
 declare function runReferencesCase(test: AutoTestReferencesCase, editor: Editor): Promise<any[]>;
-export { runCheckEditor, runCompletionCase, runDbClickCase, runDefinitionCase, runErrorCase, runHoverCase, runKeybindCase, runNoErrorCase, runOutlineCase, runPerformanceCase, runReferencesCase };
+declare function runTypeAheadCase(test: AutoTestCompletionCase, editor: Editor): Promise<void>;
+declare function runOpenFileCase(test: AutoTestOpenFileCase, config?: any): Promise<({
+    casename: string;
+    passed: boolean;
+    message: string;
+    context: any;
+} | {
+    casename: string;
+    passed: boolean;
+    context: any;
+    message?: undefined;
+})[]>;
+export { runCheckEditor, runCompletionCase, runDbClickCase, runDefinitionCase, runErrorCase, runFoldCase, runHoverCase, runKeybindCase, runNoErrorCase, runOpenFileCase, runOutlineCase, runPerformanceCase, runReferencesCase, runTypeAheadCase };
