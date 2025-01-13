@@ -183,7 +183,7 @@ export declare class HBuilderX {
     /**
     * 通过插件名称，导入插件市场的插件
     */
-    importPlugins(name: string, installed: boolean | undefined, dirName: string): Promise<boolean>;
+    importPlugins(name: string, installed?: boolean, dirName?: string): Promise<boolean>;
     /**
     * 等待重启hx
     */
