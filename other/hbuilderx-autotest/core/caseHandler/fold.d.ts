@@ -1,10 +1,8 @@
-import { AutoTestFoldCase } from '../autotest';
 import { Editor, FoldData } from '../editor';
 import { HBuilderX } from '../hxdriver';
-import { TreeItem } from '../treeItem';
+import { AutoTestFoldCase } from '../autoTestHandler/autoTestDef';
 declare class Fold {
     readonly hx: HBuilderX;
-    protected treeItem: TreeItem;
     constructor(hx: HBuilderX);
     private getFilePath;
     /**

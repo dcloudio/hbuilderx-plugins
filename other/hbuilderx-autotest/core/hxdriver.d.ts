@@ -188,5 +188,6 @@ export declare class HBuilderX {
     * 等待重启hx
     */
     withRestart(call: Function): Promise<void>;
+    resetDoc(): Promise<void>;
 }
 export {};

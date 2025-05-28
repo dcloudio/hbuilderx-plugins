@@ -3,6 +3,8 @@
  * 由于平台和电脑不同, 自动化测试需要的参数也不同, 在此处统一进行设置
  */
 declare const hxProgramByType: (type: 'dev' | 'alpha' | 'release') => string;
+export declare const hxVersionByType: (type: 'dev' | 'alpha' | 'release') => any;
+export declare const get_hx_ls_plugin_version: (type: 'dev' | 'alpha' | 'release') => any;
 /**
  * @description 获取IP地址
  * @return
@@ -46,6 +48,7 @@ declare class AutoTestConfigOptions {
     protected programPlugin: string;
     protected programRoot: string;
     constructor(argv: any);
+    get type(): "dev" | "alpha" | "release";
     get projectPathOptions(): ProjectPathOptions;
     get extOption(): ExtOption;
     get HBuilderXVersion(): string;

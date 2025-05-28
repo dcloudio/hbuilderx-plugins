@@ -1,4 +1,3 @@
-import * as autotest from './autotest';
 export declare const extServer: import("axios").AxiosInstance;
 export declare function closeHBuilderX(cmd: string): Promise<void>;
 export declare function getProjectTestFiles(autotestOptions: any, getProjectList: any): string[];
@@ -14,6 +13,7 @@ export declare function fileCase(project: string, openfile: string, workbench: a
     cassAll: any[];
     error: unknown;
     openfile?: undefined;
+    fileRunDetail?: undefined;
     documentSyncAttr?: undefined;
     allTextCases?: undefined;
     runFaliTime?: undefined;
@@ -23,10 +23,11 @@ export declare function fileCase(project: string, openfile: string, workbench: a
 } | {
     count: number;
     openfile: string;
+    fileRunDetail: any;
     documentSyncAttr: any;
     caseFail: any[];
     cassAll: any[];
-    allTextCases: autotest.AutoTestCase<any>[];
+    allTextCases: import("./autoTestHandler/autoTestDef").AutoTestCase<any>[];
     runFaliTime: number;
     runSuccessTime: number;
     runFailCase: number;
@@ -36,6 +37,7 @@ export declare function fileCase(project: string, openfile: string, workbench: a
     error: string;
     count?: undefined;
     openfile?: undefined;
+    fileRunDetail?: undefined;
     documentSyncAttr?: undefined;
     caseFail?: undefined;
     cassAll?: undefined;

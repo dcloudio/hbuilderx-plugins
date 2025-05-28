@@ -1,7 +1,7 @@
-import { AutoTestReferencesCase } from '../autotest';
 import { Editor } from '../editor';
 import { HBuilderX } from '../hxdriver';
 import { TreeItem, TreeItemInfo } from '../treeItem';
+import { AutoTestReferencesCase } from '../autoTestHandler/autoTestDef';
 declare class References {
     readonly hx: HBuilderX;
     protected treeItem: TreeItem;

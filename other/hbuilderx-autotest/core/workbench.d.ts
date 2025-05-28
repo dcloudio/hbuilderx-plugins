@@ -81,6 +81,7 @@ export declare class Workbench {
         showPubMenu: string;
         closeAllEditor: string;
         undo: string;
+        format: string;
         copy: string;
         cut: string;
         paste: string;
@@ -91,14 +92,14 @@ export declare class Workbench {
         clipBoardHistory: string;
         newUnTitledEditor: string;
         'editor.action.triggerSuggest': string;
-        enter: string;
-        down: string;
-        /**
+        enter: string; /**
          * 导入一个本地的项目到项目管理器，通过HBuilderX.exe project的形式
         */
+        down: string;
         esc: string;
         openAndCloseOutline: string;
         findReferences: string;
+        findSameWord: string;
         focusProjectManager: string;
     };
 }

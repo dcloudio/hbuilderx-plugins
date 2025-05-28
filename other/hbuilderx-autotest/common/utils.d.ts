@@ -1,3 +1,10 @@
+export declare function monitorProcess(pid: number): Promise<{
+    pid: number;
+    memory: string;
+    cpu: string;
+    t: Date;
+} | undefined>;
+export declare function hxTsserverProcesses(): any[];
 export declare function getLocalIP(): string;
 export declare function purgeCache(moduleName: string): any;
 export declare const getInitTestFile: (fileOrProjectKey: string) => string;

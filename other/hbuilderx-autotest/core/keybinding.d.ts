@@ -9,6 +9,7 @@ interface KeyBindings {
     showPubMenu: string;
     closeAllEditor: string;
     undo: string;
+    format: string;
     copy: string;
     cut: string;
     paste: string;
@@ -24,6 +25,7 @@ interface KeyBindings {
     esc: string;
     openAndCloseOutline: string;
     findReferences: string;
+    findSameWord: string;
     focusProjectManager: string;
 }
 declare let keyBindings: KeyBindings;

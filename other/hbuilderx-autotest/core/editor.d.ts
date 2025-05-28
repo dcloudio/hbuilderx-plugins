@@ -56,7 +56,14 @@ export declare class Editor {
      * @returns
      */
     findReferences(range: Range): Promise<TreeItemInfo>;
+    /**
+     * 查找相同词
+     * @param range
+     * @returns
+     */
+    findSameWord(range: Range): Promise<Range[]>;
     focusProjectManager(): Promise<void>;
+    runCommand(command: string): Promise<boolean>;
     close(): Promise<void>;
     reset(): Promise<void>;
     open(): Promise<void>;

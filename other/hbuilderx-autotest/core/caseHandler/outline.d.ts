@@ -1,7 +1,7 @@
-import { AutoTestOutlineCase } from '../autotest';
 import { Editor } from '../editor';
 import { HBuilderX } from '../hxdriver';
 import { TreeItem, TreeItemInfo } from '../treeItem';
+import { AutoTestOutlineCase } from '../autoTestHandler/autoTestDef';
 declare class Outline {
     readonly hx: HBuilderX;
     protected treeItem: TreeItem;
