@@ -90,11 +90,11 @@ export declare class Workbench {
         delLine: string;
         selectAll: string;
         clipBoardHistory: string;
-        newUnTitledEditor: string;
-        'editor.action.triggerSuggest': string;
-        enter: string; /**
-         * 导入一个本地的项目到项目管理器，通过HBuilderX.exe project的形式
+        newUnTitledEditor: string; /**
+         * 测试框架hx实例
         */
+        'editor.action.triggerSuggest': string;
+        enter: string;
         down: string;
         esc: string;
         openAndCloseOutline: string;

@@ -136,6 +136,21 @@ interface AutoTestSameWordCase extends AutoTestCase<SameWordExpect> {
     programData: string;
     programPlugin: string;
 }
+interface ExpandSelectionExpect {
+    begin: string;
+    end: string;
+    line?: string;
+}
+interface AutoTestExpandSelectionCase extends AutoTestCase<ExpandSelectionExpect> {
+    kind: 'expandSelection';
+    frequency: number;
+    range: Range;
+    docOffsetAt: number;
+    project: string;
+    lsDir: string;
+    programData: string;
+    programPlugin: string;
+}
 interface CommandExpect {
     lines: string[] | RegExp[];
     cursor?: Position;
@@ -216,4 +231,4 @@ interface AutoTestPerformanceCase extends AutoTestCase<PerformanceExpect> {
     timer: number;
     range: Range;
 }
-export { AutoEditExpect, AutoTestAutoEditCase, AutoTestCase, AutoTestCheckEditorCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestFoldCase, AutoTestFormatCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOpenFileCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase, AutoTestRetriggerCase, AutoTestSameWordCase, AutoTestCommandCase, CommandExpect, CompletionExpect, DbClickExpect, DefinitionExpect, ErrorExpect, FoldExpect, FormatExpect, HoverExpect, KeybindingExpect, OpenFileExpect, OutlineExpect, PerformanceExpect, ReferencesExpect, SameWordExpect, };
+export { AutoEditExpect, AutoTestAutoEditCase, AutoTestCase, AutoTestCheckEditorCase, AutoTestCommandCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestExpandSelectionCase, AutoTestFoldCase, AutoTestFormatCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOpenFileCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase, AutoTestRetriggerCase, AutoTestSameWordCase, CommandExpect, CompletionExpect, DbClickExpect, DefinitionExpect, ErrorExpect, FoldExpect, FormatExpect, HoverExpect, KeybindingExpect, OpenFileExpect, OutlineExpect, PerformanceExpect, ReferencesExpect, SameWordExpect };

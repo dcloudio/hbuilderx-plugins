@@ -62,6 +62,7 @@ export declare class Editor {
      * @returns
      */
     findSameWord(range: Range): Promise<Range[]>;
+    findExpandSelection(range: Range, frequency: number): Promise<Range[]>;
     focusProjectManager(): Promise<void>;
     runCommand(command: string): Promise<boolean>;
     close(): Promise<void>;

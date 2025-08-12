@@ -1,4 +1,4 @@
-import { AutoTestAutoEditCase, AutoTestCheckEditorCase, AutoTestCommandCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestFoldCase, AutoTestFormatCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOpenFileCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase, AutoTestRetriggerCase, AutoTestSameWordCase } from './autoTestHandler/autoTestDef';
+import { AutoTestAutoEditCase, AutoTestCheckEditorCase, AutoTestCommandCase, AutoTestCompletionCase, AutoTestDbClickCase, AutoTestDefinitionCase, AutoTestExpandSelectionCase, AutoTestFoldCase, AutoTestFormatCase, AutoTestHoverCase, AutoTestKeybindCase, AutoTestOpenFileCase, AutoTestOutlineCase, AutoTestPerformanceCase, AutoTestReferencesCase, AutoTestRetriggerCase, AutoTestSameWordCase } from './autoTestHandler/autoTestDef';
 import { Editor } from './editor';
 declare function runDbClickCase(test: AutoTestDbClickCase, editor: Editor): Promise<({
     casename: string;
@@ -60,4 +60,5 @@ declare function runOpenFileCase(test: AutoTestOpenFileCase, config?: any): Prom
     message?: undefined;
 })[]>;
 declare function runCommandCase(test: AutoTestCommandCase, editor: Editor): Promise<any[]>;
-export { runAutoEditCase, runCheckEditor, runCommandCase, runCompletionCase, runDbClickCase, runDefinitionCase, runErrorCase, runFoldCase, runFormatCase, runHoverCase, runKeybindCase, runNoErrorCase, runOpenFileCase, runOutlineCase, runPerformanceCase, runReferencesCase, runRetriggerCase, runSameWordCase, runTypeAheadCase, };
+declare function runExpandSelectionCase(test: AutoTestExpandSelectionCase, editor: Editor): Promise<any[]>;
+export { runAutoEditCase, runCheckEditor, runCommandCase, runCompletionCase, runDbClickCase, runDefinitionCase, runErrorCase, runFoldCase, runFormatCase, runHoverCase, runKeybindCase, runNoErrorCase, runOpenFileCase, runOutlineCase, runPerformanceCase, runReferencesCase, runRetriggerCase, runSameWordCase, runTypeAheadCase, runExpandSelectionCase, };

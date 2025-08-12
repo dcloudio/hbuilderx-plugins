@@ -29,4 +29,5 @@ interface KeyBindings {
     focusProjectManager: string;
 }
 declare let keyBindings: KeyBindings;
-export { keyBindings };
+declare function parseAndMatchKeys(hotkeyString: string): string;
+export { keyBindings, parseAndMatchKeys };

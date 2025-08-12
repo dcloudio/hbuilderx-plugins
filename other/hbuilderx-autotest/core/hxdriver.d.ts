@@ -116,6 +116,13 @@ export declare class HBuilderX {
         y: number;
     }, tryCount?: number): Promise<void>;
     /**
+     * 等待点击（点击）操作完成，不等待点击的后续任务是否执行，xy不传，默认是选中控件的中心
+     */
+    waitAndClickWithKeyModifier(selector: string, keyModifier: string, xy?: {
+        x: number;
+        y: number;
+    }, tryCount?: number): Promise<void>;
+    /**
      * 等待点击（双击）操作完成，不等待点击的后续任务是否执行，xy不传，默认是选中控件的中心
      */
     waitAndDbClick(selector: string, xy?: {

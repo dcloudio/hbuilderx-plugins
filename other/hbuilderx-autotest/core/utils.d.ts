@@ -49,6 +49,7 @@ export declare function fileCase(project: string, openfile: string, workbench: a
 }>;
 export declare function traverseDirectory(dir: string, includes?: string[], needSort?: boolean): string[];
 export declare function moveItemToFront(arr: string[], key: string): string[];
+export declare function moveItemToEnd(arr: string[], key: string): string[];
 export declare const directoryList: (dirPath: string) => string[];
 /**
  * 解析测试用例的期望路径

@@ -3,6 +3,7 @@ declare class KeepSnapshotVersionBase {
     testTaskInfo: any;
     HX_SNAPSHOT_ROOT_DIR: string;
     funcId: string;
+    test_platform: string;
     pcOsname: string;
     testPcIp: string;
     hx_version: string;
