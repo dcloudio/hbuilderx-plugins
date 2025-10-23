@@ -21,7 +21,7 @@ jobs:
       - name: Publish autotest
         run: |
           cd other/hbuilderx-autotest
-          npm --access public
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,6 +37,6 @@ jobs:
       - name: Publish cli
         run: |
           cd other/hbuilderx-cli
-          npm --access public
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
