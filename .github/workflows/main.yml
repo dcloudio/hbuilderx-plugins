@@ -2,21 +2,21 @@ name: Publish Packages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - 'other/hbuilderx-autotest/**'
-      - 'other/hbuilderx-cli/**'
+      - "other/hbuilderx-autotest/**"
+      - "other/hbuilderx-cli/**"
 
 jobs:
-  publish-a:
-    if: contains(github.event.head_commit.message, 'hbuilderx-autotest') || contains(join(github.event.commits.*.modified), 'other/hbuilderx-autotest/')
+  publish-autotest:
+    if: contains(github.event.head_commit.message, 'hbuilderx-autotest') || contains(join(github.event.commits.*.modified), 'other/hbuilderx-autotest/') || contains(join(github.event.commits.*.added), 'other/hbuilderx-autotest/') || contains(join(github.event.commits.*.removed), 'other/hbuilderx-autotest/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
       - name: Publish A
         run: |
           cd other/hbuilderx-autotest
@@ -24,15 +24,15 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-b:
-    if: contains(github.event.head_commit.message, 'hbuilderx-cli') || contains(join(github.event.commits.*.modified), 'other/hbuilderx-cli/')
+  publish-cli:
+    if: contains(github.event.head_commit.message, 'hbuilderx-cli') || contains(join(github.event.commits.*.modified), 'other/hbuilderx-cli/') || contains(join(github.event.commits.*.added), 'other/hbuilderx-cli/') || contains(join(github.event.commits.*.removed), 'other/hbuilderx-cli/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
       - name: Publish B
         run: |
           cd other/hbuilderx-cli
