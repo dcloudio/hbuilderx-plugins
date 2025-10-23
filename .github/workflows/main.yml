@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
-      - name: Publish A
+      - name: Publish autotest
         run: |
           cd other/hbuilderx-autotest
-          npm publish
+          npm --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -34,9 +34,9 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
-      - name: Publish B
+      - name: Publish cli
         run: |
           cd other/hbuilderx-cli
-          npm publish
+          npm --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
