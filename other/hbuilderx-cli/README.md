@@ -15,7 +15,7 @@
 ### 本地安装
 
 ```bash
-npm install hbuilderx-cli --save-dev
+npm install @dcloudio/hbuilderx-cli --save-dev
 ```
 
 ## 🚀 快速开始
