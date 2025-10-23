@@ -6,6 +6,7 @@ on:
     paths:
       - "other/hbuilderx-autotest/**"
       - "other/hbuilderx-cli/**"
+      - ".github/workflows/main.yml"
 
 jobs:
   publish-autotest:
