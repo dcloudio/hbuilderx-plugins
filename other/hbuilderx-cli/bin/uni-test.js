@@ -3,6 +3,7 @@
 const {
   checkHBuilderXEnvironment,
   executeCommand,
+  executeCommandWithOutput,
   getCurrentProjectPath,
   handleCommandError
 } = require('../lib/hbuilderx');
@@ -73,7 +74,24 @@ async function main() {
 
     // 最后执行测试
     console.log(`Running ${finalPlatform} tests...`);
-    await executeCommand(hbuilderxCli, ['uniapp.test', finalPlatform, '--project', currentProjectPath, ...otherArgs]);
+    try {
+      const result = await executeCommandWithOutput(hbuilderxCli, ['uniapp.test', finalPlatform, '--project', currentProjectPath, ...otherArgs]);
+
+      // 检查输出中是否包含特定错误信息
+      const output = result.stdout + result.stderr;
+      if (output.includes("命令'uniapp.test") && output.includes("不存在或缺少参数 当前命令执行错误")) {
+        console.error('\n此功能依赖【HBuilderX uni-app自动化测试】插件。');
+        console.error('安装地址: https://ext.dcloud.net.cn/plugin?id=5708\n');
+        process.exit(0);
+      }
+
+      // 如果命令执行失败，使用退出码
+      if (result.code !== 0) {
+        process.exit(result.code);
+      }
+    } catch (error) {
+      handleCommandError(error, 'uniapp.test');
+    }
   } catch (error) {
     handleCommandError(error, 'uniapp.test');
   }

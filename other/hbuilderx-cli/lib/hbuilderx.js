@@ -132,6 +132,53 @@ function executeCommand(hbuilderxCli, args) {
 }
 
 /**
+ * 执行 HBuilderX 命令并捕获输出
+ * @param {string} hbuilderxCli - HBuilderX CLI 工具路径
+ * @param {string[]} args - 命令参数
+ * @returns {Promise<{code: number, stdout: string, stderr: string}>} 退出码和输出
+ */
+function executeCommandWithOutput(hbuilderxCli, args) {
+  return new Promise((resolve, reject) => {
+    let stdout = '';
+    let stderr = '';
+
+    const child = spawn(hbuilderxCli, args, {
+      stdio: ['inherit', 'pipe', 'pipe']
+    });
+
+    child.stdout.on('data', (data) => {
+      const output = data.toString();
+      stdout += output;
+      // 同时输出到控制台，保持原有体验
+      process.stdout.write(data);
+    });
+
+    child.stderr.on('data', (data) => {
+      const output = data.toString();
+      stderr += output;
+      // 同时输出到控制台，保持原有体验
+      process.stderr.write(data);
+    });
+
+    child.on('error', (error) => {
+      reject(error);
+    });
+
+    child.on('exit', (code, signal) => {
+      if (signal) {
+        reject(new Error(`Process killed with signal: ${signal}`));
+      } else {
+        resolve({
+          code: code ?? 0,
+          stdout,
+          stderr
+        });
+      }
+    });
+  });
+}
+
+/**
  * 获取当前项目路径
  * @returns {string} 项目路径
  */
@@ -152,6 +199,7 @@ function handleCommandError(error, commandName) {
 module.exports = {
   checkHBuilderXEnvironment,
   executeCommand,
+  executeCommandWithOutput,
   getCurrentProjectPath,
   handleCommandError
 };
