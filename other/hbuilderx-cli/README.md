@@ -28,7 +28,7 @@ npm install @dcloudio/hbuilderx-cli --save-dev
 
 ## 📖 命令使用
 
-### 开发命令 (uni-launch)
+<!-- ### 开发命令 (uni-launch)
 
 #### Web 平台
 
@@ -86,7 +86,7 @@ npm run dev:mp-alipay -- --runtime-log true
 
 # 抖音小程序
 npm run dev:mp-toutiao -- --runtime-log true
-```
+``` -->
 
 ### 日志查看命令 (uni-logcat)
 
