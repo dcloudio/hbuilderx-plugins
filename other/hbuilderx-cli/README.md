@@ -22,7 +22,9 @@ npm install @dcloudio/hbuilderx-cli --save-dev
 
 ### 1. 环境准备
 
-确保您已经安装了 HBuilderX 应用程序。HBuilderX-cli 会自动检测已启动的 HBuilderX 进程。
+确保您已经安装了 **HBuilderX 4.87 或更高版本**。HBuilderX-cli 会自动检测已启动的 HBuilderX 进程。
+
+> **⚠️ 版本要求**：本工具需要 HBuilderX 4.87 及以上版本，低于此版本将无法正常使用。
 
 ## 📖 命令使用
 
@@ -168,6 +170,17 @@ set HBUILDERX_CLI_PATH="C:\Program Files\HBuilderX\cli.exe"
 # 或设置环境变量
 export HBUILDERX_CLI_PATH="/path/to/hbuilderx/cli"
 ```
+
+#### 2. HBuilderX 版本过低
+
+如果遇到命令执行错误，请检查 HBuilderX 版本：
+
+```bash
+# 检查 HBuilderX 版本
+cli --version
+```
+
+本工具需要 **HBuilderX 4.87 或更高版本**，请更新到最新版本。
 
 ## 📚 更多信息
 

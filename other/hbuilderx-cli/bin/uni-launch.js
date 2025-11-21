@@ -22,16 +22,13 @@ async function main() {
 
     // 如果 HBuilderX 未运行，先执行 open
     if (!isRunning) {
-      console.log('Opening HBuilderX...');
       await executeCommand(hbuilderxCli, ['open']);
     }
 
     // 再执行 project open
-    console.log('Opening project...');
-    await executeCommand(hbuilderxCli, ['project', 'open', '--path', currentProjectPath]);
+    await executeCommand(hbuilderxCli, ['project', 'open', '--path', currentProjectPath], false);
 
     // 最后执行 launch
-    console.log(`Launching project on ${platform}...`);
     await executeCommand(hbuilderxCli, ['launch', platform, '--project', currentProjectPath, ...extraArgs.slice(1)]);
   } catch (error) {
     handleCommandError(error, 'launch');

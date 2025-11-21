@@ -90,17 +90,17 @@ async function checkHBuilderXEnvironment() {
   }
 
   // 3. 都没有找到，报错
-  console.error('HBuilderX not found:');
-  console.error('1. No running HBuilderX process detected');
-  console.error('2. HBUILDERX_CLI_PATH environment variable is not set or path is invalid');
+  console.error('未找到 HBuilderX:');
+  console.error('1. 未检测到正在运行的 HBuilderX 进程');
+  console.error('2. HBUILDERX_CLI_PATH 环境变量未设置或路径无效');
   console.error('');
-  console.error('Please either:');
-  console.error('- Start HBuilderX application first');
-  console.error('- Set HBUILDERX_CLI_PATH environment variable to the HBuilderX CLI path');
+  console.error('请执行以下操作之一:');
+  console.error('- 先启动 HBuilderX 应用程序');
+  console.error('- 设置 HBUILDERX_CLI_PATH 环境变量为 HBuilderX CLI 路径');
   if (process.platform === 'darwin' || process.platform === 'linux') {
-    console.error('  Example: export HBUILDERX_CLI_PATH="/Applications/HBuilderX.app/Contents/MacOS/cli"');
+    console.error('  示例: export HBUILDERX_CLI_PATH="/Applications/HBuilderX.app/Contents/MacOS/cli"');
   } else {
-    console.error('  Example: set HBUILDERX_CLI_PATH="C:\\Program Files\\HBuilderX\\cli.exe"');
+    console.error('  示例: set HBUILDERX_CLI_PATH="C:\\Program Files\\HBuilderX\\cli.exe"');
   }
   process.exit(1);
 }
@@ -109,12 +109,13 @@ async function checkHBuilderXEnvironment() {
  * 执行 HBuilderX 命令
  * @param {string} hbuilderxCli - HBuilderX CLI 工具路径
  * @param {string[]} args - 命令参数
+ * @param {boolean} showOutput - 是否显示输出，默认为 true
  * @returns {Promise<number>} 退出码
  */
-function executeCommand(hbuilderxCli, args) {
+function executeCommand(hbuilderxCli, args, showOutput = true) {
   return new Promise((resolve, reject) => {
     const child = spawn(hbuilderxCli, args, {
-      stdio: 'inherit'
+      stdio: showOutput ? 'inherit' : ['ignore', 'ignore', 'ignore']
     });
 
     child.on('error', (error) => {

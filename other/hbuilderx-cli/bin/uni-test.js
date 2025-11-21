@@ -64,16 +64,13 @@ async function main() {
     const finalPlatform = getPlatformName(platform, browser);
     // 如果 HBuilderX 未运行，先执行 open
     if (!isRunning) {
-      console.log('Opening HBuilderX...');
       await executeCommand(hbuilderxCli, ['open']);
     }
 
     // 再执行 project open
-    console.log('Opening project...');
-    await executeCommand(hbuilderxCli, ['project', 'open', '--path', currentProjectPath]);
+    await executeCommand(hbuilderxCli, ['project', 'open', '--path', currentProjectPath], false);
 
     // 最后执行测试
-    console.log(`Running ${finalPlatform} tests...`);
     try {
       const result = await executeCommandWithOutput(hbuilderxCli, ['uniapp.test', finalPlatform, '--project', currentProjectPath, ...otherArgs]);
 
